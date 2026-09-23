@@ -16,7 +16,7 @@ concurrency:
 jobs:
   backend:
     name: Backend tests and SQLite migrations
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
       AI_MODE: mock
@@ -47,7 +47,7 @@ jobs:
 
   frontend:
     name: TypeScript and production build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     defaults:
       run:
@@ -67,7 +67,7 @@ jobs:
   docker:
     name: Docker and PostgreSQL demo flow
     needs: [backend, frontend]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
       AI_MODE: mock
